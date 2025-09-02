@@ -11,7 +11,7 @@
   Linker:	lld 
 */
 
-/* Auto hide vertical tab bar based on panel bar visibility*/
+/* Auto hide/unhide vertical tab bar based on "Hide Panel" button */
 #browser>#main>.inner:has(#panels-container.switcher) {
   .tabbar-wrapper:has(#tabs-tabbar-container) {
     min-width: 36px;
@@ -23,19 +23,7 @@
   }
 }
 
-/* Auto hide bottom toolbar based on panel bar visibility*/
+/* Hide bottom toolbar based on "Hide Panel" button*/
 #browser:has(#main > .inner > #panels-container.switcher) #footer:has(.toolbar-statusbar) {
   display: none;
 }
-
-/* Auto hide vertical tab bar */
-/* #browser>#main>.inner:has(#panels-container.switcher) {
-  .tabbar-wrapper:has(#tabs-tabbar-container) {
-    min-width: 36px;
-  }
-
-  #tabs-tabbar-container:not(:hover),
-  #tabs-tabbar-container:not(:hover) .toolbar-tabbar-after {
-    display: contents;
-  }
-} */
