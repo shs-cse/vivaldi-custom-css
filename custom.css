@@ -1,0 +1,41 @@
+/* SDS */
+/* 
+  Vivaldi:	7.5.3735.66 (Stable channel) (arm64) 
+  Revision:	f60054ed49802bdfc9cf9dfa7f8515508fd2c1ee
+  OS	macOS: Version 15.5 (Build 24F74)
+  JavaScript:	V8 13.8.258.32
+  User Agent:	Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/138.0.0.0 Safari/537.36
+  Command Line:	/Applications/Vivaldi.app/Contents/MacOS/Vivaldi --flag-switches-begin --debug-packed-apps --silent-debugger-extension-api --flag-switches-end --flag-switches-begin --flag-switches-end --disable-smooth-scrolling
+  Executable Path:	/Applications/Vivaldi.app/Contents/MacOS/Vivaldi
+  Profile Path:	/Users/shadmanshahriar/Library/Application Support/Vivaldi/Default
+  Linker:	lld 
+*/
+
+/* Auto hide vertical tab bar based on panel bar visibility*/
+#browser>#main>.inner:has(#panels-container.switcher) {
+  .tabbar-wrapper:has(#tabs-tabbar-container) {
+    min-width: 36px;
+  }
+
+  #tabs-tabbar-container:not(:hover),
+  #tabs-tabbar-container:not(:hover) .toolbar-tabbar-after {
+    display: contents;
+  }
+}
+
+/* Auto hide bottom toolbar based on panel bar visibility*/
+#browser:has(#main > .inner > #panels-container.switcher) #footer:has(.toolbar-statusbar) {
+  display: none;
+}
+
+/* Auto hide vertical tab bar */
+/* #browser>#main>.inner:has(#panels-container.switcher) {
+  .tabbar-wrapper:has(#tabs-tabbar-container) {
+    min-width: 36px;
+  }
+
+  #tabs-tabbar-container:not(:hover),
+  #tabs-tabbar-container:not(:hover) .toolbar-tabbar-after {
+    display: contents;
+  }
+} */
